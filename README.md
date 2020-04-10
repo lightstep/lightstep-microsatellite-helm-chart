@@ -9,4 +9,4 @@ The minimum configuration for this to work is for the user to input either a Sat
 
 Running the helm chart:
 
-In order to install the helm chart, clone the project, input your satellite key (and any other configuration desired) and then run  `helm install satellite lightstep-satellite-helm-chart`, or atch the file path to the directory you installed.
+In order to install the helm chart, clone the project, input your satellite key (and any other configuration desired) and then run  `helm install satellite lightstep-satellite-helm-chart`, or match the file path to the directory you installed.
