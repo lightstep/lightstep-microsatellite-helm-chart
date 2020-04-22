@@ -6,7 +6,8 @@ Required Configuration:
 
 The minimum configuration for this to work is for the user to input either a Satellite API key or point to a kubernetes secret that contains the Satellite API key.
 
-If you're using an existing secret, enter the name and key of the secret that stores your satellite API key.  Your existing secret should match this pattern, 
+If you're using an existing secret, enter the name and key of the secret that stores your satellite API key.  Your existing secret should match this pattern:
+
   $ kubectl describe secret ${collector_satellite_key_secret_name}
   Name:         collector_satellite_key_secret_name
   Namespace:    default
@@ -16,7 +17,6 @@ If you're using an existing secret, enter the name and key of the secret that st
   Type:  Opaque
 
   Data
-  ____
   collector_satellite_key_secret_key:  390 bytes
 
 
