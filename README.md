@@ -21,6 +21,7 @@ If you're using an existing secret, enter the name and key of the secret that st
  > Type:  Opaque
  >
  > Data
+ > ===
  > collector_satellite_key_secret_key:  390 bytes
 
 
