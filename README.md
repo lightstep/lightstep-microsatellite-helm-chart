@@ -8,7 +8,7 @@ The minimum configuration for this to work is for the user to input either a Sat
 
 If you're using an existing secret, enter the name and key of the secret that stores your satellite API key.  Your existing secret should match this pattern, 
   $ kubectl describe secret ${collector_satellite_key_secret_name}
-  Name:         **collector_satellite_key_secret_name**
+  Name:         collector_satellite_key_secret_name
   Namespace:    default
   Labels:       <none>
   Annotations:  <none>
@@ -16,8 +16,8 @@ If you're using an existing secret, enter the name and key of the secret that st
   Type:  Opaque
 
   Data
-  ====
-  **collector_satellite_key_secret_key**:  390 bytes
+  ____
+  collector_satellite_key_secret_key:  390 bytes
 
 
 Running the helm chart:
