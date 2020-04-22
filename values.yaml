@@ -1,10 +1,9 @@
 # Default values for lightstep.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+# Eventual wishlist: # Implement statsD as sidecar [[ chose not to do. to be considered if needed by customer. ]]
 
-
-#TODO: 
-# Implement statsD as sidecar [[ chose not to do. to be considered if needed by customer. ]]
+#TODO: Input your satellite key.  Satellites will not run without a valid key.  You may use either a plain text Satellite key or an existing secret with the Satellite key stored.
 
 replicaCount: 1
 
@@ -57,23 +56,13 @@ ingress:
 #For details on the Lightstep configuration parameters, please refer to: https://docs.lightstep.com/docs/satellite-configuration-parameters
 
 lightstep:
-  #Input your Satellite API Key
+  #REQUIRED: Input your Satellite API Key
   satelliteKey: ""
-  #If you're using an existing secret, enter the name and key of the secret that stores your satellite API key.  Your existing secret should match this pattern, 
-  # $ kubectl describe secret collector_satellite_key_secret_name
-  # Name:         collector_satellite_key_secret_name
-  # Namespace:    default
-  # Labels:       <none>
-  # Annotations:  <none>
-
-  # Type:  Opaque
-
-  # Data
-  # ====
-  # collector_satellite_key_secret_key:  390 bytes
+  #OR
   collector_satellite_key_secret_name: ""
   collector_satellite_key_secret_key: ""
-  collector_pool: rancher-satellite-pool
+  #Optional configs
+  collector_pool: my-satellite-pool
   bytes_per_project: "1000000000"
   bytes_per_project_override:
   guid:
