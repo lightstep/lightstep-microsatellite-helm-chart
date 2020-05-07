@@ -78,6 +78,27 @@ spec:
           - name: COLLECTOR_INGESTION_TAGS
             value: {{ .Values.lightstep.collector_ingestion_tags | quote }}
           {{ end }}
+          {{ if eq .Values.statsd.enabled true }}
+          - name: COLLECTOR_STATSD_HOST
+            value: {{ .Values.statsd.host | quote }}
+          - name: COLLECTOR_STATSD_PORT
+            value: {{ .Values.statsd.port | quote }}
+          {{ if eq .Values.statsd.dogStatsD true }}
+          - name: COLLECTOR_STATSD_EXPORT_DOGSTATSD
+            value: {{ .Values.statsd.dogStatsD | quote }}
+          - name: COLLECTOR_STATSD_DOGSTATSD_TAGS
+            value: {{ .Values.statsd.dogStatsDTags | quote }}
+          {{ else }}
+          - name: COLLECTOR_STATSD_EXPORT_STATSD
+            value: {{ .Values.statsd.export_statsd | quote }}
+          {{ end }}
+          - name: COLLECTOR_STATSD_PREFIX
+            value: {{ .Values.statsd.prefix | quote }}
+          - name: COLLECTOR_STATSD_SATELLITE_PREFIX
+            value: {{ .Values.statsd.satellite_prefix | quote }}
+          - name: COLLECTOR_STATSD_CLIENT_PREFIX
+            value: {{ .Values.statsd.client_prefix | quote }}
+          {{ end }}
         ports:
         - containerPort: {{ .Values.lightstep.diagnostic_port }}
           name: diagnostics

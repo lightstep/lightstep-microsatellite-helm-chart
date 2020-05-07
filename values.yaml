@@ -92,3 +92,14 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+statsd:
+    enabled: true
+    host: 127.0.0.1
+    port: 8125
+    export_statsd: true                               #If true, dogStatsD will be ignored
+    prefix: "lightstep.prod.us-west-1"
+    satellite_prefix: "satellite-canary"
+    client_prefix: "client_via_canary"
+    dogStatsD: false                                  #If true, will output dogStatsD instead of statsD
+    dogStatsDTags: "pool:us-west-1,canary:true"
