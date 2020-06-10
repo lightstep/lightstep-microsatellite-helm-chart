@@ -22,7 +22,7 @@ spec:
       securityContext:
 {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-      - name: rancher-test
+      - name: lightstep-satellite
         image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
