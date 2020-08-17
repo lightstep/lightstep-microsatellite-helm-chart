@@ -37,8 +37,8 @@ spec:
           - name: COLLECTOR_SATELLITE_KEY
             valueFrom:
               secretKeyRef:
-                key: satelliteKey
-                name: lightstep-satellite
+                key: {{.Values.lightstep.collector_satellite_key_secret_name}}
+                name: {{.Values.lightstep.collector_satellite_key_secret_key}}
           {{- end }}
           - name: COLLECTOR_POOL
             value: {{ .Values.lightstep.collector_pool | quote }}
