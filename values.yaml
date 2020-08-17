@@ -72,6 +72,10 @@ lightstep:
   # ====
   # collector_satellite_key_secret_key:  390 bytes
 
+  #Single Project Mode details
+  disable_access_token_checking: false
+  project_name: ""
+
   #Optional configs
   collector_pool: my-satellite-pool
   bytes_per_project: "1000000000"

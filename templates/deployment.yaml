@@ -35,10 +35,19 @@ spec:
           {{- end }}
           {{- if .Values.lightstep.satelliteKey }}
           - name: COLLECTOR_SATELLITE_KEY
-            value: {{.Values.lightstep.satelliteKey}}
+            valueFrom:
+              secretKeyRef:
+                key: satellitekey
+                name: lightstep-satellite
           {{- end }}
           - name: COLLECTOR_POOL
             value: {{ .Values.lightstep.collector_pool | quote }}
+          {{- if .Values.lightstep.disable_access_token_checking }}
+          - name: COLLECTOR_DISABLE_ACCESS_TOKEN_CHECKING
+            value: {{.Values.lightstep.disable_access_token_checking | quote }}
+          - name: COLLECTOR_PROJECT_NAME
+            value: {{ index .Values.lightstep.project_name}}
+          {{- end }}
           {{- if .Values.lightstep.guid -}}
           - name: GUID
             value: {{ .Values.lightstep.guid }}
