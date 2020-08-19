@@ -39,7 +39,7 @@ spec:
           {{- end }}
           - name: COLLECTOR_POOL
             value: {{ .Values.lightstep.collector_pool | quote }}
-          {{- if .Values.lightstep.guid -}}
+          {{- if .Values.lightstep.guid }}
           - name: GUID
             value: {{ .Values.lightstep.guid }}
           {{- end }}
