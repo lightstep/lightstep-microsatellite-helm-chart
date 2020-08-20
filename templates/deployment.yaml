@@ -25,6 +25,8 @@ spec:
       - name: lightstep-satellite
         image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 10 }}
         env:
           {{- if .Values.lightstep.collector_satellite_key_secret_name }}
           - name: COLLECTOR_SATELLITE_KEY
@@ -48,7 +50,7 @@ spec:
           - name: COLLECTOR_PROJECT_NAME
             value: {{ index .Values.lightstep.project_name}}
           {{- end }}
-          {{- if .Values.lightstep.guid -}}
+          {{- if .Values.lightstep.guid }}
           - name: GUID
             value: {{ .Values.lightstep.guid }}
           {{- end }}
