@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  lightstep:
+  - apiVersion: v1
+    appVersion: latest
+    created: "2020-08-21T00:00:03.497004322Z"
+    description: Lightsep satellite to collect telemetry data.
+    digest: e40d54e407ab0fcc5e2ab682f1055fc45273122253c73e2c15c9f75bb3ec2934
+    home: https://lightstep.com/
+    icon: file://../lightstep-logo.png
+    name: lightstep
+    urls:
+    - https://github.com/lightstep/lightstep-satellite-helm-chart/releases/download/lightstep-1/lightstep-1.tgz
+    version: "1"
+generated: "2020-08-21T00:00:03.034703185Z"
