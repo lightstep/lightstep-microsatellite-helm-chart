@@ -1,0 +1,67 @@
+# lightstep
+
+![Version: 1.0](https://img.shields.io/badge/Version-1.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+
+Lightsep satellite to collect telemetry data.
+
+**Homepage:** <https://lightstep.com/>
+
+## Values
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| affinity | object | `{}` |  |
+| fullnameOverride | string | `""` |  |
+| image.pullPolicy | string | `"IfNotPresent"` |  |
+| image.repository | string | `"lightstep/collector"` |  |
+| imagePullSecrets | list | `[]` |  |
+| ingress.annotations | object | `{}` |  |
+| ingress.enabled | bool | `false` |  |
+| ingress.hosts[0].host | string | `"chart-example.local"` |  |
+| ingress.hosts[0].paths | list | `[]` |  |
+| ingress.tls | list | `[]` |  |
+| lightstep.admin_plain_port | int | `8180` |  |
+| lightstep.admin_secure_port | int | `9090` |  |
+| lightstep.bytes_per_project | string | `"1000000000"` |  |
+| lightstep.bytes_per_project_override | string | `nil` |  |
+| lightstep.collector_ingestion_tags | string | `nil` |  |
+| lightstep.collector_pool | string | `"my-satellite-pool"` |  |
+| lightstep.collector_satellite_key_secret_key | string | `""` |  |
+| lightstep.collector_satellite_key_secret_name | string | `""` |  |
+| lightstep.diagnostic_port | int | `8000` |  |
+| lightstep.disable_access_token_checking | bool | `false` |  |
+| lightstep.grpc_plain_port | int | `8184` |  |
+| lightstep.grpc_secure_port | int | `9292` |  |
+| lightstep.guid | string | `nil` |  |
+| lightstep.http_plain_port | int | `8181` |  |
+| lightstep.http_secure_port | int | `9191` |  |
+| lightstep.plain_port | int | `8383` |  |
+| lightstep.project_name | string | `""` |  |
+| lightstep.satelliteKey | string | `""` |  |
+| lightstep.secure_port | int | `9393` |  |
+| lightstep.tls_cert_prefix | string | `nil` |  |
+| nameOverride | string | `""` |  |
+| nodeSelector | object | `{}` |  |
+| podSecurityContext | object | `{}` |  |
+| replicaCount | int | `1` |  |
+| resources.limits.cpu | int | `2` |  |
+| resources.limits.memory | string | `"16Gi"` |  |
+| resources.requests.cpu | int | `2` |  |
+| resources.requests.memory | string | `"16Gi"` |  |
+| securityContext | object | `{}` |  |
+| service.grpcinsecure | int | `8184` |  |
+| service.httpPort | int | `8181` |  |
+| service.type | string | `"ClusterIP"` |  |
+| serviceAccount.annotations | object | `{}` |  |
+| serviceAccount.create | bool | `false` |  |
+| serviceAccount.name | string | `nil` |  |
+| statsd.client_prefix | string | `"client_via_canary"` |  |
+| statsd.dogStatsD | bool | `false` |  |
+| statsd.dogStatsDTags | string | `"pool:us-west-1,canary:true"` |  |
+| statsd.enabled | bool | `true` |  |
+| statsd.export_statsd | bool | `true` |  |
+| statsd.host | string | `"127.0.0.1"` |  |
+| statsd.port | int | `8125` |  |
+| statsd.prefix | string | `"lightstep.prod.us-west-1"` |  |
+| statsd.satellite_prefix | string | `"satellite-canary"` |  |
+| tolerations | list | `[]` |  |
