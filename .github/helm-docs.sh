@@ -8,5 +8,5 @@ curl --silent --show-error --fail --location --output /tmp/helm-docs.tar.gz http
 tar -xf /tmp/helm-docs.tar.gz helm-docs
 
 # validate docs
-./helm-docs
+./helm-docs -l debug
 git diff --exit-code
