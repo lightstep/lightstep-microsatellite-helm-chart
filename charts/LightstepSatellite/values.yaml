@@ -98,10 +98,11 @@ lightstep:
 resources:
   limits:
     memory: 16Gi
-    cpu: 3
+    cpu: 2
   requests:
     memory: 16Gi
-    cpu: 3
+    cpu: 2
+
 
 nodeSelector: {}
 
