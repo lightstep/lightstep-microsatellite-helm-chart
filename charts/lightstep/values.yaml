@@ -111,7 +111,7 @@ tolerations: []
 affinity: {}
 
 statsd:
-  enabled: true
+  enabled: false
   host: statsd-exporter
   port: 9125
   export_statsd: true                               # If true, dogStatsD will be ignored

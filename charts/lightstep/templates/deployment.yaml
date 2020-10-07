@@ -161,6 +161,7 @@ spec:
             initialDelaySeconds: 60
             periodSeconds: 20
             successThreshold: 1
+        {{- if .Values.statsd.enabled }}
         - name: statsd-exporter
           securityContext:
             {{- toYaml .Values.statsd.securityContext | nindent 12 }}
@@ -198,6 +199,7 @@ spec:
               - key: config
                 path: statsd_mapping.yml
           name: statsd-mapping-vol
+      {{- end }}
     {{- with .Values.nodeSelector }}
     nodeSelector:
 {{- toYaml . | nindent 8 }}
