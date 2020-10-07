@@ -17,6 +17,7 @@ spec:
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -200,6 +201,7 @@ spec:
                 path: statsd_mapping.yml
           name: statsd-mapping-vol
       {{- end }}
+
     {{- with .Values.nodeSelector }}
     nodeSelector:
 {{- toYaml . | nindent 8 }}
