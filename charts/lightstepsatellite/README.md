@@ -45,10 +45,10 @@ Lightsep satellite to collect telemetry data.
 | podAnnotations."prometheus.io/scrape" | string | `"true"` |  |
 | podSecurityContext | object | `{}` |  |
 | replicaCount | int | `1` |  |
-| resources.limits.cpu | int | `2` |  |
-| resources.limits.memory | string | `"16Gi"` |  |
+| resources.limits.cpu | int | `4` |  |
+| resources.limits.memory | string | `"32Gi"` |  |
 | resources.requests.cpu | int | `2` |  |
-| resources.requests.memory | string | `"16Gi"` |  |
+| resources.requests.memory | string | `"12Gi"` |  |
 | securityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | securityContext.readOnlyRootFilesystem | bool | `true` |  |
 | securityContext.runAsNonRoot | bool | `false` |  |
