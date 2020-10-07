@@ -71,7 +71,7 @@ jobs:
       - name: Run chart-testing (install)
         uses: helm/chart-testing-action@master
         env:
-          CR_TOKEN: ${{ secrets.CR_TOKEN }}
+          CR_TOKEN: '${{ secrets.CR_TOKEN }}'
         with:
           command: install
           config: .github/ct.yaml

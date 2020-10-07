@@ -1,4 +1,4 @@
-helm-extra-args: "--timeout 600s --set satelliteKey=$CR_TOKEN"
+helm-extra-args: "--timeout 300s --set satelliteKey=$CR_TOKEN"
 check-version-increment: true
 debug: true
 validate-maintainers: false
