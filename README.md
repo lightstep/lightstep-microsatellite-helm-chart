@@ -28,3 +28,9 @@ If you're using an existing secret, enter the name and key of the secret that st
 Running the helm chart:
 
 In order to install the helm chart, clone the project, input your satellite key (and any other configuration desired) and then run  `helm install satellite lightstep-satellite-helm-chart`, or match the file path to the directory you installed.
+
+
+
+# Contributors
+
+Please delete the charts/lightstepsatellite/README.md and regenerate it with the helm-docs (https://github.com/norwoodj/helm-docs) command.
