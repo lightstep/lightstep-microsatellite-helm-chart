@@ -101,10 +101,10 @@ lightstep:
 # Recommended resources would be 16Gi memory and 2 cpu
 resources:
   limits:
-    memory: 32Gi
-    cpu: 4
+    memory: 16Gi
+    cpu: 2
   requests:
-    memory: 12Gi
+    memory: 16Gi
     cpu: 2
 
 
