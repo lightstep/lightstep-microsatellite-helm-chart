@@ -29,6 +29,8 @@ Running the helm chart:
 
 In order to install the helm chart, clone the project, input your satellite key (and any other configuration desired) and then run  `helm install satellite lightstep-satellite-helm-chart`, or match the file path to the directory you installed.
 
+Or instal from artifact hub here: https://artifacthub.io/packages/helm/lightstepsatellite/lightstep
+
 
 
 # Contributors
