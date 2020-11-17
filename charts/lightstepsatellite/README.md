@@ -1,6 +1,6 @@
 # lightstep
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Lightsep satellite to collect telemetry data.
 
@@ -53,6 +53,7 @@ Lightsep satellite to collect telemetry data.
 | securityContext.readOnlyRootFilesystem | bool | `true` |  |
 | securityContext.runAsNonRoot | bool | `false` |  |
 | service.annotations | object | `{}` |  |
+| service.grpc | bool | `false` |  |
 | service.grpcinsecure | int | `8184` |  |
 | service.httpPort | int | `8181` |  |
 | service.type | string | `"ClusterIP"` |  |
