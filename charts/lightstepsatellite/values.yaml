@@ -40,6 +40,7 @@ securityContext:
 service:
   type: ClusterIP
   httpPort: 8181
+  grpc: false     #Set to true if you're using GRPC in order to deploy as a headless service for better load balancing
   grpcinsecure: 8184
   annotations: {}
 
