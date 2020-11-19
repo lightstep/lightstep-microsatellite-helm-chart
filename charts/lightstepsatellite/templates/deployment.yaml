@@ -61,9 +61,9 @@ spec:
             {{- end }}
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
               value: {{ .Values.lightstep.bytes_per_project | quote }}
-            {{- if .Values.lightstep.bytes_per_project_override -}}
+            {{- if .Values.lightstep.bytes_per_project_override }}
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT_OVERRIDES
-              value: {{ .Values.lightstep.bytes_per_project_override | quote }}
+              value: {{ .Values.lightstep.bytes_per_project_override | toJson | quote }}
             {{ end }}
             - name: COLLECTOR_DIAGNOSTIC_PORT
               value: {{ .Values.lightstep.diagnostic_port | quote }}
@@ -83,11 +83,11 @@ spec:
               value: {{ .Values.lightstep.plain_port | quote }}
             - name: COLLECTOR_SECURE_PORT
               value: {{ .Values.lightstep.secure_port | quote }}
-            {{- if .Values.lightstep.tls_cert_prefix -}}
+            {{- if .Values.lightstep.tls_cert_prefix }}
             - name: COLLECTOR_TLS_CERT_PREFIX
               value: {{ .Values.lightstep.tls_cert_prefix | quote }}
             {{ end }}
-            {{- if .Values.lightstep.collector_ingestion_tags -}}
+            {{- if .Values.lightstep.collector_ingestion_tags }}
             - name: COLLECTOR_INGESTION_TAGS
               value: {{ .Values.lightstep.collector_ingestion_tags | quote }}
             {{ end }}
