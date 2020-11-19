@@ -107,7 +107,6 @@ resources:
     memory: 16Gi
     cpu: 2
 
-
 nodeSelector: {}
 
 tolerations: []
