@@ -4,7 +4,6 @@
 
 # REQUIRED: Input your satellite key.  Satellites will not run without a valid key.  You may use either a plain text Satellite key or an existing secret with the Satellite key stored.
 
-
 replicaCount: 1
 
 image:
