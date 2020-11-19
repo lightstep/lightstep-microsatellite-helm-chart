@@ -6,7 +6,7 @@ on:
       - master
       - main
     paths:
-      - 'charts/**'
+      - 'charts/**/**'
 
 jobs:
   release:
