@@ -62,10 +62,8 @@ lightstep:
   # REQUIRED: Input your Satellite API Key
   satelliteKey: ""
   # OR
-
   collector_satellite_key_secret_name: ""
   collector_satellite_key_secret_key: ""
-
   # $ kubectl describe secret collector_satellite_key_secret_name
   # Name:         collector_satellite_key_secret_name
   # Namespace:    default
