@@ -59,6 +59,7 @@ ingress:
 # For details on the Lightstep configuration parameters, please refer to: https://docs.lightstep.com/docs/satellite-configuration-parameters
 
 lightstep:
+
   # REQUIRED: Input your Satellite API Key
   satelliteKey: ""
   # OR
