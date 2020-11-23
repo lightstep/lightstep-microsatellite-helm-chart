@@ -8,6 +8,7 @@ replicaCount: 1
 
 image:
   repository: lightstep/collector
+  version: 2020-09-24_05-22-16Z
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []

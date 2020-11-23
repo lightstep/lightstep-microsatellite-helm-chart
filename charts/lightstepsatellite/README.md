@@ -1,8 +1,8 @@
 # lightstep
 
-![Version: 1.1.3](https://img.shields.io/badge/Version-1.1.3-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.1.4](https://img.shields.io/badge/Version-1.1.4-informational?style=flat-square) ![AppVersion: 2020-09-24_05-22-16Z](https://img.shields.io/badge/AppVersion-2020--09--24_05--22--16Z-informational?style=flat-square)
 
-Lightsep satellite to collect telemetry data.
+Lightstep satellite to collect telemetry data.
 
 **Homepage:** <https://lightstep.com/>
 
@@ -14,6 +14,7 @@ Lightsep satellite to collect telemetry data.
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"lightstep/collector"` |  |
+| image.version | string | `"2020-09-24_05-22-16Z"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.enabled | bool | `false` |  |
