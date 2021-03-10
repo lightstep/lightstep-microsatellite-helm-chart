@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: statsd-mapping
+  name: {{ printf "%s-statsd-mapping" (include "lightstep.fullname" .) }}
   labels:
     {{- include "lightstep.labels" . | nindent 4 }}
 data:

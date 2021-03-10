@@ -1,6 +1,6 @@
 # lightstep
 
-![Version: 1.1.4](https://img.shields.io/badge/Version-1.1.4-informational?style=flat-square) ![AppVersion: 2020-09-24_05-22-16Z](https://img.shields.io/badge/AppVersion-2020--09--24_05--22--16Z-informational?style=flat-square)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![AppVersion: 2021-01-26_23-02-36Z](https://img.shields.io/badge/AppVersion-2021--01--26_23--02--36Z-informational?style=flat-square)
 
 Lightstep satellite to collect telemetry data.
 
@@ -14,7 +14,7 @@ Lightstep satellite to collect telemetry data.
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"lightstep/collector"` |  |
-| image.version | string | `"2020-09-24_05-22-16Z"` |  |
+| image.version | string | `"2021-01-26_23-02-36Z"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.enabled | bool | `false` |  |
@@ -33,12 +33,12 @@ Lightstep satellite to collect telemetry data.
 | lightstep.disable_access_token_checking | bool | `false` |  |
 | lightstep.grpc_plain_port | int | `8184` |  |
 | lightstep.grpc_secure_port | int | `9292` |  |
-| lightstep.guid | string | `nil` |  |
+| lightstep.guid | string | `nil` | defaults to pod's name using the Downward API |
 | lightstep.http_plain_port | int | `8181` |  |
 | lightstep.http_secure_port | int | `9191` |  |
 | lightstep.plain_port | int | `8383` |  |
-| lightstep.project_name | string | `""` |  |
-| lightstep.satelliteKey | string | `""` |  |
+| lightstep.project_name | string | `""` | REQUIRED if `lightstep.disable_access_token_checking` is `true` |
+| lightstep.satelliteKey | string | `""` | REQUIRED: your Satellite API Key - if not set, `lightstep.collector_satellite_key_secret_name` and `lightstep.collector_satellite_key_secret_key` must be set |
 | lightstep.secure_port | int | `9393` |  |
 | lightstep.tls_cert_prefix | string | `nil` |  |
 | nameOverride | string | `""` |  |
@@ -50,17 +50,29 @@ Lightstep satellite to collect telemetry data.
 | resources.limits.memory | string | `"16Gi"` |  |
 | resources.requests.cpu | int | `2` |  |
 | resources.requests.memory | string | `"16Gi"` |  |
-| securityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | securityContext.readOnlyRootFilesystem | bool | `true` |  |
-| securityContext.runAsNonRoot | bool | `false` |  |
+| securityContext.runAsNonRoot | bool | `true` |  |
+| securityContext.runAsUser | int | `1000` |  |
 | service.annotations | object | `{}` |  |
-| service.grpc | bool | `false` |  |
+| service.grpc | bool | `false` | set to true if you're using GRPC in order to deploy as a headless service for better load balancing |
 | service.grpcinsecure | int | `8184` |  |
 | service.httpPort | int | `8181` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
+| serviceAccount.clusterRole.create | bool | `false` |  |
+| serviceAccount.clusterRole.name | string | `"lightstep-node-reader"` |  |
+| serviceAccount.clusterRoleBinding.create | bool | `false` |  |
+| serviceAccount.clusterRoleBinding.name | string | `"lightstep-read-nodes"` |  |
+| serviceAccount.clusterRoleBinding.roleRefName | string | `nil` | if not set and create is true, the `serviceAccount.clusterRole.name` is used |
+| serviceAccount.clusterRoleBinding.serviceAccountName | string | `nil` | if not set and and create is true, the generated serviceAccount name is used |
 | serviceAccount.create | bool | `false` |  |
-| serviceAccount.name | string | `nil` |  |
+| serviceAccount.name | string | `nil` | the name of the service account to use; if not set and create is true, a name is generated using the fullname template |
+| serviceAccount.role.create | bool | `false` |  |
+| serviceAccount.role.name | string | `"lightstep-pod-reader"` |  |
+| serviceAccount.roleBinding.create | bool | `false` |  |
+| serviceAccount.roleBinding.name | string | `"lightstep-read-pods"` |  |
+| serviceAccount.roleBinding.roleRefName | string | `nil` | if not set and create is true, the `serviceAccount.role.name` is used |
+| serviceAccount.roleBinding.serviceAccountName | string | `nil` | if not set and and create is true, the generated serviceAccount name is used |
 | statsd.client_prefix | string | `"client_via_canary"` |  |
 | statsd.dogStatsD | bool | `false` |  |
 | statsd.dogStatsDTags | string | `"pool:us-west-1,canary:true"` |  |
@@ -69,7 +81,7 @@ Lightstep satellite to collect telemetry data.
 | statsd.host | string | `"statsd-exporter"` |  |
 | statsd.image.pullPolicy | string | `"IfNotPresent"` |  |
 | statsd.image.repository | string | `"prom/statsd-exporter"` |  |
-| statsd.image.tag | string | `"v0.17.0"` |  |
+| statsd.image.tag | string | `"v0.20.0"` |  |
 | statsd.port | int | `9125` |  |
 | statsd.prefix | string | `"lightstep.prod.us-west-1"` |  |
 | statsd.resources | object | `{}` |  |
@@ -81,4 +93,4 @@ Lightstep satellite to collect telemetry data.
 | tolerations | list | `[]` |  |
 
 ----------------------------------------------
-Autogenerated from chart metadata using [helm-docs v1.3.0](https://github.com/norwoodj/helm-docs/releases/v1.3.0)
+Autogenerated from chart metadata using [helm-docs v1.5.0](https://github.com/norwoodj/helm-docs/releases/v1.5.0)

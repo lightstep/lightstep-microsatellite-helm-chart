@@ -45,7 +45,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: satellitekey
-                  name: lightstep-satellite
+                  name: {{ include "lightstep.fullname" . }}
             {{- end }}
             - name: COLLECTOR_POOL
               value: {{ .Values.lightstep.collector_pool | quote }}
@@ -55,9 +55,13 @@ spec:
             - name: COLLECTOR_PROJECT_NAME
               value: {{ index .Values.lightstep.project_name}}
             {{- end }}
-            {{- if .Values.lightstep.guid }}
             - name: GUID
+            {{- if .Values.lightstep.guid }}
               value: {{ .Values.lightstep.guid }}
+            {{- else }}
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
             {{- end }}
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
               value: {{ .Values.lightstep.bytes_per_project | quote }}
@@ -203,14 +207,14 @@ spec:
       {{- end }}
 
     {{- with .Values.nodeSelector }}
-    nodeSelector:
-{{- toYaml . | nindent 8 }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
     {{ end }}
-  {{- with .Values.affinity }}
-    affinity:
-{{- toYaml . | nindent 8 }}
-  {{ end }}
-  {{- with .Values.tolerations }}
-    tolerations:
-{{- toYaml . | nindent 8 }}
-  {{ end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{ end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{ end }}

@@ -8,7 +8,7 @@ replicaCount: 1
 
 image:
   repository: lightstep/collector
-  version: 2020-09-24_05-22-16Z
+  version: 2021-01-26_23-02-36Z
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -20,9 +20,32 @@ serviceAccount:
   create: false
   # Annotations to add to the service account
   annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
+  # -- the name of the service account to use; if not set and create is true, a name is generated using the fullname template
   name:
+  role:
+    # Specifies whether get/watch/list for pods role should be created
+    create: false
+    name: lightstep-pod-reader
+  clusterRole:
+    # Specifies whether get/watch/list for nodes clusterRole should be created
+    create: false
+    name: lightstep-node-reader
+  roleBinding:
+    # Specifies whether role should be created
+    create: false
+    name: lightstep-read-pods
+    # -- if not set and create is true, the `serviceAccount.role.name` is used
+    roleRefName:
+    # -- if not set and and create is true, the generated serviceAccount name is used
+    serviceAccountName:
+  clusterRoleBinding:
+    # Specifies whether clusterRole should be created
+    create: false
+    name: lightstep-read-nodes
+    # -- if not set and create is true, the `serviceAccount.clusterRole.name` is used
+    roleRefName:
+    # -- if not set and and create is true, the generated serviceAccount name is used
+    serviceAccountName:
 
 podAnnotations:
   prometheus.io/scrape: "true"
@@ -30,17 +53,23 @@ podAnnotations:
 podSecurityContext: {}
   # fsGroup: 2000
 
+# As of at least version 2021-01-26_23-02-36Z, `drop: ["ALL"]`
+# for securityContext.capabilities results in the lightstep/collector
+# container terminating with the following message:
+#    /bin/sh: 1: exec: /root/collector: Operation not permitted
 securityContext:
-  capabilities:
-    drop:
-      - ALL
+  # capabilities:
+  #   drop:
+  #     - ALL
   readOnlyRootFilesystem: true
-  runAsNonRoot: false
+  runAsNonRoot: true
+  runAsUser: 1000
 
 service:
   type: ClusterIP
   httpPort: 8181
-  grpc: false     #Set to true if you're using GRPC in order to deploy as a headless service for better load balancing
+  # -- set to true if you're using GRPC in order to deploy as a headless service for better load balancing
+  grpc: false
   grpcinsecure: 8184
   annotations: {}
 
@@ -61,7 +90,7 @@ ingress:
 
 lightstep:
 
-  # REQUIRED: Input your Satellite API Key
+  # -- REQUIRED: your Satellite API Key - if not set, `lightstep.collector_satellite_key_secret_name` and `lightstep.collector_satellite_key_secret_key` must be set
   satelliteKey: ""
   # OR
   collector_satellite_key_secret_name: ""
@@ -78,6 +107,7 @@ lightstep:
 
   # Single Project Mode details
   disable_access_token_checking: false
+  # -- REQUIRED if `lightstep.disable_access_token_checking` is `true`
   project_name: ""
 
   # Optional configs
@@ -85,6 +115,7 @@ lightstep:
   collector_pool: my-satellite-pool
   bytes_per_project: "1000000000"
   bytes_per_project_override:
+  # -- defaults to pod's name using the Downward API
   guid:
   diagnostic_port: 8000
   admin_plain_port: 8180
@@ -125,7 +156,7 @@ statsd:
   dogStatsDTags: "pool:us-west-1,canary:true"
   image:
     repository: prom/statsd-exporter
-    tag: v0.17.0
+    tag: v0.20.0
     pullPolicy: IfNotPresent
   securityContext:
     capabilities:
