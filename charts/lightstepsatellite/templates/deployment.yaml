@@ -199,7 +199,7 @@ spec:
             {{- toYaml .Values.statsd.resources | nindent 12 }}
       volumes:
         - configMap:
-            name: statsd-mapping
+            name: {{ printf "%s-statsd-mapping" (include "lightstep.fullname" .) }}
             items:
               - key: config
                 path: statsd_mapping.yml

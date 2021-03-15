@@ -49,6 +49,7 @@ serviceAccount:
 
 podAnnotations:
   prometheus.io/scrape: "true"
+  prometheus.io/port: "9102"
 
 podSecurityContext: {}
   # fsGroup: 2000
