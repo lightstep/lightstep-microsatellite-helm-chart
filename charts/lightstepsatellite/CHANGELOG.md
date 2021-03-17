@@ -1,3 +1,15 @@
+## 1.2.2
+
+BUG FIXES:
+
+* rolebindings: fix overzealous whitespace removal in `if` directives
+
+## 1.2.1
+
+BUG FIXES:
+
+* statsd-mapping configmap: fix outdated configmap name in deployment template
+
 ## 1.2.0
 
 ENHANCEMENTS:
