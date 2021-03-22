@@ -55,6 +55,10 @@ spec:
             - name: COLLECTOR_PROJECT_NAME
               value: {{ index .Values.lightstep.project_name}}
             {{- end }}
+            {{- if .Values.lightstep.is_micro }}
+            - name: COLLECTOR_SATELLITE_TYPE_FLAVOR
+              value: micro
+            {{- end }}
             - name: GUID
             {{- if .Values.lightstep.guid }}
               value: {{ .Values.lightstep.guid }}

@@ -1,3 +1,9 @@
+## 1.2.3
+ENHANCEMENTS:
+
+* Added support for micro-satellite deployments
+
+
 ## 1.2.2
 
 BUG FIXES:

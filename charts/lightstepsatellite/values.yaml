@@ -111,6 +111,10 @@ lightstep:
   # -- REQUIRED if `lightstep.disable_access_token_checking` is `true`
   project_name: ""
 
+  #Enable this configuration to run the satellite in 'micro' mode. This means the satellite will simply index and forward spans, without holding onto them locally for querying
+  #The recommended memory usage for a micro-satellite is 2GB. It's expected a 2CPU 2GB micro-sat to support 6MB/s.
+  is_micro: false
+
   # Optional configs
 
   collector_pool: my-satellite-pool
