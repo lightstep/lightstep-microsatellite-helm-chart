@@ -30,7 +30,7 @@ collector_satellite_key_secret_key:  390 bytes
 
 ## Running the helm chart:
 
-In order to install the helm chart, clone the project, input your satellite key (and any other configuration desired) and then run 
+In order to install the helm chart, clone the project, input your satellite key (and any other configuration desired) and then run
 
 ```
 helm install satellite lightstep-microsatellite-helm-chart
@@ -38,7 +38,7 @@ helm install satellite lightstep-microsatellite-helm-chart
 
 Or match the file path to the directory you installed.
 
-Or install the helm chart from artifact hub here: https://artifacthub.io/packages/helm/lightstepsatellite/lightstep
+Or install the helm chart from artifact hub here: https://artifacthub.io/packages/helm/lightstep-microsat/lightstep
 
 # Contributors
 
