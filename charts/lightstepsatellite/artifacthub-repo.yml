@@ -1,5 +1,7 @@
 # Artifact Hub repository metadata file
-repositoryID: 733960d2-d63d-4d2f-8a11-6c0b502e8f13
+repositoryID: 
 owners: # (optional, used to claim repository ownership)
   - name: AJohnsonLS
     email: ajohnson@lightstep.com
+  - name: michellelee
+    email: michellelee@lightstep.com

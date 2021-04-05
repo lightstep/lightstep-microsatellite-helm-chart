@@ -5,7 +5,7 @@ This repo is a fork of [lightstep-satellite-helm-chart](https://github.com/light
 Breaking changes:
 - Point repository to [lightstep/microsatellite](https://hub.docker.com/r/lightstep/microsatellite)
 - Bump version to `2021-03-22_13-16-05Z`
-- Remove optional config `bytes_per_project` (deprecated with  microsatellites)
+- Remove optional config `bytes_per_project` (deprecated with microsatellites)
 
 ## 1.2.2
 

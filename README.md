@@ -2,7 +2,7 @@
 
 This is a Helm chart used to deploy a Lightstep **microsatellite**. This repo is a fork of [lightstep-satellite-helm-chart](https://github.com/lightstep/lightstep-satellite-helm-chart/) for Lightstep microsatellites. Everything version 2.0.0 and after will be for microsatellites only.
 
-All configuration should be made in the `values.yaml` file.  Nothing else should need to be modified.  This does not include metrics monitoring and the extra containers of the StatsD exporter or endpoints.
+All configuration should be made in the `values.yaml` file. Nothing else should need to be modified. This does not include metrics monitoring and the extra containers of the StatsD exporter or endpoints.
 
 ## Required Configuration:
 
