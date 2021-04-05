@@ -91,7 +91,7 @@ ingress:
 
 lightstep:
 
-  # -- REQUIRED: your Satellite API Key - if not set, `lightstep.collector_satellite_key_secret_name` and `lightstep.collector_satellite_key_secret_key` must be set
+  # -- REQUIRED: your Satellite Key - if not set, `lightstep.collector_satellite_key_secret_name` and `lightstep.collector_satellite_key_secret_key` must be set
   satelliteKey: ""
   # OR
   collector_satellite_key_secret_name: ""
