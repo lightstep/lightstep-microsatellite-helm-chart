@@ -1,6 +1,6 @@
-## 1.2.3
+## 2.0.0
 
-This repo is a fork of [lightstep-satellite-helm-chart](https://github.com/lightstep/lightstep-satellite-helm-chart/) for Lightstep microsatellites. Everything version 1.2.3 and after will be for microsatellites only.
+This repo is a fork of [lightstep-satellite-helm-chart](https://github.com/lightstep/lightstep-satellite-helm-chart/) for Lightstep microsatellites. Everything version 2.0.0 and after will be for microsatellites only.
 
 Breaking changes:
 - Point repository to [lightstep/microsatellite](https://hub.docker.com/r/lightstep/microsatellite)
