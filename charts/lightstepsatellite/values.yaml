@@ -7,8 +7,8 @@
 replicaCount: 1
 
 image:
-  repository: lightstep/collector
-  version: 2021-01-26_23-02-36Z
+  repository: lightstep/microsatellite
+  version: 2021-03-22_13-16-05Z
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -91,7 +91,7 @@ ingress:
 
 lightstep:
 
-  # -- REQUIRED: your Satellite API Key - if not set, `lightstep.collector_satellite_key_secret_name` and `lightstep.collector_satellite_key_secret_key` must be set
+  # -- REQUIRED: your Satellite Key - if not set, `lightstep.collector_satellite_key_secret_name` and `lightstep.collector_satellite_key_secret_key` must be set
   satelliteKey: ""
   # OR
   collector_satellite_key_secret_name: ""
@@ -114,8 +114,6 @@ lightstep:
   # Optional configs
 
   collector_pool: my-satellite-pool
-  bytes_per_project: "1000000000"
-  bytes_per_project_override:
   # -- defaults to pod's name using the Downward API
   guid:
   diagnostic_port: 8000
