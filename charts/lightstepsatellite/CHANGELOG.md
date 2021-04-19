@@ -1,3 +1,10 @@
+## 2.0.1
+
+ENHANCEMENTS:
+
+* Changed the defaults of service accounts for running the satellite. This wil prevent insufficient errors when running the pods
+* Updated the default resources to match in-line with the recommended memory usage
+
 ## 2.0.0
 
 This repo is a fork of [lightstep-satellite-helm-chart](https://github.com/lightstep/lightstep-satellite-helm-chart/) for Lightstep microsatellites. Everything version 2.0.0 and after will be for microsatellites only.

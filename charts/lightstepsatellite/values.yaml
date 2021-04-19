@@ -17,22 +17,22 @@ fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: false
+  create: true
   # Annotations to add to the service account
   annotations: {}
   # -- the name of the service account to use; if not set and create is true, a name is generated using the fullname template
   name:
   role:
     # Specifies whether get/watch/list for pods role should be created
-    create: false
+    create: true
     name: lightstep-pod-reader
   clusterRole:
     # Specifies whether get/watch/list for nodes clusterRole should be created
-    create: false
+    create: true
     name: lightstep-node-reader
   roleBinding:
     # Specifies whether role should be created
-    create: false
+    create: true
     name: lightstep-read-pods
     # -- if not set and create is true, the `serviceAccount.role.name` is used
     roleRefName:
@@ -40,7 +40,7 @@ serviceAccount:
     serviceAccountName:
   clusterRoleBinding:
     # Specifies whether clusterRole should be created
-    create: false
+    create: true
     name: lightstep-read-nodes
     # -- if not set and create is true, the `serviceAccount.clusterRole.name` is used
     roleRefName:
@@ -131,10 +131,10 @@ lightstep:
 # Recommended resources would be 16Gi memory and 2 cpu
 resources:
   limits:
-    memory: 16Gi
+    memory: 2Gi
     cpu: 2
   requests:
-    memory: 16Gi
+    memory: 2Gi
     cpu: 2
 
 nodeSelector: {}
