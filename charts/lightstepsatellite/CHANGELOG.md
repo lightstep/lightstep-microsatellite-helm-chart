@@ -1,3 +1,14 @@
+## 2.0.2
+
+ENHANCEMENTS:
+
+* Clean up values.yaml and README
+* Improve default resource allocation
+* Update metrics mappings
+
+FIXES:
+* Update default metric sidecar path to work OOTB
+
 ## 2.0.1
 
 ENHANCEMENTS:
