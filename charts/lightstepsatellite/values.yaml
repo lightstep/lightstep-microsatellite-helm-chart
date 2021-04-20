@@ -132,7 +132,7 @@ affinity: {}
 
 statsd:
   enabled: false
-  host: statsd-exporter
+  host: localhost                                   # localhost is required for the sidecar to work
   port: 9125
   export_statsd: true                               # If true, dogStatsD will be ignored
   prefix: "lightstep.prod.us-west-1"
@@ -151,10 +151,10 @@ statsd:
     readOnlyRootFilesystem: true
     runAsNonRoot: true
     runAsUser: 1000
-  resources: {}
-    # limits:
-    #   memory: 20M
-    #   cpu: 1
-    # requests:
-    #   memory: 15M
-    #   cpu: 1
+  resources:
+    limits:
+      memory: 20M
+      cpu: 1
+    requests:
+      memory: 15M
+      cpu: 1
