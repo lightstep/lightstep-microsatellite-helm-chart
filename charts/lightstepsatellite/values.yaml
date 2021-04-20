@@ -74,20 +74,7 @@ service:
   grpcinsecure: 8184
   annotations: {}
 
-
-ingress:
-  enabled: false
-  annotations: {}
-
-  hosts:
-    - host: chart-example.local
-      paths: []
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
-
-# For details on the Lightstep configuration parameters, please refer to: https://docs.lightstep.com/docs/satellite-configuration-parameters
+# For details on the Lightstep configuration parameters, please refer to: https://docs.lightstep.com/docs/micro-satellite-configuration-parameters
 
 lightstep:
 
@@ -128,7 +115,7 @@ lightstep:
   tls_cert_prefix:
   collector_ingestion_tags:
 
-# Recommended resources would be 16Gi memory and 2 cpu
+# Recommended resources would be 2Gi memory and 2 cpu
 resources:
   limits:
     memory: 2Gi
@@ -145,7 +132,7 @@ affinity: {}
 
 statsd:
   enabled: false
-  host: statsd-exporter
+  host: localhost                                   # localhost is required for the sidecar to work
   port: 9125
   export_statsd: true                               # If true, dogStatsD will be ignored
   prefix: "lightstep.prod.us-west-1"
@@ -164,10 +151,10 @@ statsd:
     readOnlyRootFilesystem: true
     runAsNonRoot: true
     runAsUser: 1000
-  resources: {}
-    # limits:
-    #   memory: 20M
-    #   cpu: 1
-    # requests:
-    #   memory: 15M
-    #   cpu: 1
+  resources:
+    limits:
+      memory: 20M
+      cpu: 1
+    requests:
+      memory: 15M
+      cpu: 1

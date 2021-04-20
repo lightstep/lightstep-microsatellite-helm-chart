@@ -44,10 +44,34 @@ data:
           prefix: "{{ .Values.statsd.prefix }}"
           satellite_prefix: "{{ .Values.statsd.satellite_prefix }}"
           lightstep_project: "$1"
-      - match: "{{ .Values.statsd.prefix }}.{{ .Values.statsd.satellite_prefix }}.current.recall.seconds.*"
-        name: "lightstep_current_recall_seconds"
-        match_metric_type: gauge
+      - match: "{{ .Values.statsd.prefix }}.{{ .Values.statsd.satellite_prefix }}.bytes.*.*"
+        name: "lightstep_bytes"
+        match_metric_type: counter
+        labels:
+          prefix: "{{ .Values.statsd.prefix }}"
+          satellite_prefix: "{{ .Values.statsd.satellite_prefix }}"
+          action: "$1"
+          lightstep_project: "$2"
+      - match: "{{ .Values.statsd.prefix }}.{{ .Values.statsd.satellite_prefix }}.starts.*"
+        name: "lightstep_starts"
+        match_metric_type: counter
         labels:
           prefix: "{{ .Values.statsd.prefix }}"
           satellite_prefix: "{{ .Values.statsd.satellite_prefix }}"
           lightstep_project: "$1"
+      - match: "{{ .Values.statsd.prefix }}.{{ .Values.statsd.satellite_prefix }}.forward_spans.*.*"
+        name: "lightstep_forward_spans"
+        match_metric_type: counter
+        labels:
+          prefix: "{{ .Values.statsd.prefix }}"
+          satellite_prefix: "{{ .Values.statsd.satellite_prefix }}"
+          action: "$1"
+          lightstep_project: "$2"
+      - match: "{{ .Values.statsd.prefix }}.{{ .Values.statsd.satellite_prefix }}.forward_spans.*.size_exceeded.*"
+        name: "lightstep_forward_spans_size_exceeded"
+        match_metric_type: counter
+        labels:
+          prefix: "{{ .Values.statsd.prefix }}"
+          satellite_prefix: "{{ .Values.statsd.satellite_prefix }}"
+          action: "$1"
+          lightstep_project: "$2"

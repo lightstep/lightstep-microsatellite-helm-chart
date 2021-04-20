@@ -13,7 +13,7 @@ FIXES:
 
 ENHANCEMENTS:
 
-* Changed the defaults of service accounts for running the satellite. This wil prevent insufficient errors when running the pods
+* Changed the defaults of service accounts for running the satellite. This wil prevent insufficient permissions errors when running the pods
 * Updated the default resources to match in-line with the recommended memory usage
 
 ## 2.0.0
