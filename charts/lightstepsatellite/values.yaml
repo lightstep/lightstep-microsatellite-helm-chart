@@ -145,7 +145,7 @@ affinity: {}
 
 statsd:
   enabled: false
-  host: statsd-exporter
+  host: localhost                                   # localhost is required for the sidecar to work
   port: 9125
   export_statsd: true                               # If true, dogStatsD will be ignored
   prefix: "lightstep.prod.us-west-1"
