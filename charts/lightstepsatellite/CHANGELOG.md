@@ -1,3 +1,9 @@
+## 2.0.3
+
+FIXES:
+
+* Finalized removing of the ingress configurations that weren't used
+
 ## 2.0.2
 
 ENHANCEMENTS:
