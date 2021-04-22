@@ -3,6 +3,17 @@ entries:
   lightstep:
   - apiVersion: v1
     appVersion: 2021-03-22_13-16-05Z
+    created: "2021-04-22T19:51:51.684955341Z"
+    description: Lightstep microsatellite to collect telemetry data.
+    digest: 4042378407fdd349988971adbd5ee15116064ffaad02904ba8d63efe71d612bc
+    home: https://lightstep.com/
+    icon: https://go.lightstep.com/rs/260-KGM-472/images/logo-medium-color-400x100.jpg
+    name: lightstep
+    urls:
+    - https://github.com/lightstep/lightstep-microsatellite-helm-chart/releases/download/lightstep-2.0.4/lightstep-2.0.4.tgz
+    version: 2.0.4
+  - apiVersion: v1
+    appVersion: 2021-03-22_13-16-05Z
     created: "2021-04-20T17:47:07.176348456Z"
     description: Lightstep microsatellite to collect telemetry data.
     digest: 1baa10061d53a00ccd2edd5addfa81d443d5c9307cc00a6502bc0423c572d21d
