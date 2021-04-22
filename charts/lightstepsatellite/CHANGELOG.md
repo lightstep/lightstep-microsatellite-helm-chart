@@ -1,3 +1,13 @@
+## 2.0.4
+
+FIXES:
+
+* Improvements to the metric config mapping. Reduces redundant entries and fixes some ordering problems.
+
+BREAKING CHANGES:
+
+* Changes the metric `lightstep_bytes_received` to `lightstep_bytes action=received`. Any dashboards that use the metric `lightstep_bytes_received` 
+
 ## 2.0.3
 
 FIXES:
