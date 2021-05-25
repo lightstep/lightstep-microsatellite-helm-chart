@@ -116,6 +116,18 @@ spec:
             - name: COLLECTOR_STATSD_CLIENT_PREFIX
               value: {{ .Values.statsd.client_prefix | quote }}
             {{ end }}
+            - name: COLLECTOR_SPACE_STATION_GRPC_ENDPOINT_HOST
+              value: "us-central1.gcp.space-station.staging.lightstep.com"
+            - name: COLLECTOR_SPACE_STATION_GRPC_ENDPOINT_PORT
+              value: "443"
+            - name: COLLECTOR_SPACE_STATION_GRPC_ENDPOINT_PLAINTEXT
+              value: "false"
+            - name: COLLECTOR_RAINBOW_ENDPOINT_HOST
+              value: "api-staging-grpc.lightstep.com"
+            - name: COLLECTOR_RAINBOW_ENDPOINT_PORT
+              value: "8043"
+            - name: COLLECTOR_RAINBOW_ENDPOINT_PLAINTEXT
+              value: "false"
           ports:
           - containerPort: {{ .Values.lightstep.diagnostic_port }}
             name: diagnostics
