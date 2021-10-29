@@ -1,3 +1,21 @@
+## 2.0.5
+
+FIXES:
+
+* Added compression improvements on the span forwarding path to reduce wire size of requests sent from satellites to Lightstep SaaS.
+
+* Increased COLLECTOR_SPAN_FORWARDING_BUFFER_SIZE buffer to 20,000 as the default: You no longer need to configure this parameter.
+
+* Added days_until_key_expiry: This new satellite key expiry metric returns the days before key expires, based on the satellite_key_id. This is the ID shown on the Satellite Keys tab of the Account Settings page.
+
+* OTLP tracing upgraded to support v0.9
+
+* Go upgraded to v1.17
+
+* gzip compression for OTLP/HTTP ingest: Previously, if you sent spans compressed using GZIP, they wouldn’t unzip properly and the request would fail. This has been fixed.
+
+* Running Microsatellites as containers: Previously, if you ran satellites as containers, we incorrectly set GOMAXPROCS to the number of CPUs in the machine of the container. We now correctly read the number of CPUs allocated to the container to set GOMAXPROCS. This has incremental performance benefits.
+
 ## 2.0.4
 
 FIXES:
