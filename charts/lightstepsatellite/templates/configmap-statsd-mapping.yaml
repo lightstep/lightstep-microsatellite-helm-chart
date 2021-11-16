@@ -31,7 +31,7 @@ data:
           action: "$1"
           lightstep_project: "$2"
       - match: "{{ .Values.statsd.prefix }}.{{ .Values.statsd.satellite_prefix }}.index.queue.*.*"
-        name: "lightstep_index_queue_${1}"
+        name: "lightstep_index_queue_$1"
         match_metric_type: gauge
         labels:
           prefix: "{{ .Values.statsd.prefix }}"
