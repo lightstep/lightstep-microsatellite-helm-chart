@@ -1,3 +1,9 @@
+## 2.0.6
+
+* We’ve added the ability to ingest trace data from the Datadog agent to Lightstep. You can choose to send the data to both Datadog and Lightstep, or just Lightstep, by changing the configuration of the agent.
+
+* The Microsatellite image is now based on Ubuntu version 22.04.
+
 ## 2.0.5
 
 FIXES:
