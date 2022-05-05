@@ -13,12 +13,6 @@ spec:
 {{ else }}
   type: {{ .Values.service.type }}
 {{ end }}
-  ports:
-    - name: http
-      port: {{ .Values.service.httpPort }}
-      targetPort: {{ .Values.service.httpPort }}
-    - name: grpc-insecure
-      port: {{ .Values.service.grpcinsecure }}
-      targetPort: {{ .Values.service.grpcinsecure }}
+  ports: {{ .Values.service.ports | toYaml | nindent 4 }}
   selector:
     {{- include "lightstep.selectorLabels" . | nindent 4 }}

@@ -2,7 +2,7 @@
 
 This is a Helm chart used to deploy a Lightstep **microsatellite**. This repo is a fork of [lightstep-satellite-helm-chart](https://github.com/lightstep/lightstep-satellite-helm-chart/) for Lightstep microsatellites. Everything version 2.0.0 and after will be for microsatellites only.
 
-All configuration should be made in the `values.yaml` file. Nothing else should need to be modified.
+All configuration should be made in the `values.yaml` file.
 
 ## Required Configuration
 
@@ -21,7 +21,24 @@ Type:  Opaque
 Data
 collector_satellite_key_secret_key:  390 bytes
 ```
+### TLS Requirement for Production Environment
 
+Create a secret with your TLS cert:
+```bash
+$ kubectl describe secret lightstep-satellite-tls
+Name:         lightstep-satellite-tls
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+
+Type:  Opaque
+
+Data
+====
+YOURINFO.bundle.pem:  1371 bytes
+YOURINFO.key.pem:     1675 bytes
+```
+Uncomment the TLS Volumes section in values.yaml and enable the necesarry secure ports on your service.
 ## Running the helm chart
 
 In order to install the helm chart, clone the project, input your satellite key (and any other configuration desired) and then run
