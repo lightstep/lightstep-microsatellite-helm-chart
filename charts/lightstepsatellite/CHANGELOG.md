@@ -1,3 +1,12 @@
+## 2.0.7
+
+* New forward_spans.request.compressed_bytes.sum metric from Microsatellites that represents the bytes of compressed span data emitted.
+* New forward_spans.request.compressed_bytes.failed metric from Microsatellites that represents the bytes of compressed span data that failed to send from the Microsatellite. The metric includes the code tag, allowing you see the types of errors.
+* You can now sample trace data by sending a percentage (between 1 and 100) of spans using the new sample_percent configuration for the Microsatellite or using the API. Setting the parameter using the API now takes precedence over the setting in the configuration file.
+__This change deprecates the sample_one_in_n parameter and API__.
+* The OpenTelemetry otel.trace_id attribute is now automatically generated on all spans.
+* Strings in spans must be valid UTF-8 or the spans will be rejected.
+
 ## 2.0.6
 
 * We’ve added the ability to ingest trace data from the Datadog agent to Lightstep. You can choose to send the data to both Datadog and Lightstep, or just Lightstep, by changing the configuration of the agent.
