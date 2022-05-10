@@ -26,6 +26,8 @@ spec:
       serviceAccountName: {{ include "lightstep.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        {{- toYaml .Values.volumes | nindent 6 }}
       containers:
         - name: lightstep-microsatellite
           image: "{{ .Values.image.repository }}:{{ .Values.image.version }}"
@@ -166,6 +168,8 @@ spec:
             initialDelaySeconds: 60
             periodSeconds: 20
             successThreshold: 1
+          volumeMounts:
+            {{- toYaml .Values.volumeMounts | nindent 10 }}
         {{- if .Values.statsd.enabled }}
         - name: statsd-exporter
           securityContext:

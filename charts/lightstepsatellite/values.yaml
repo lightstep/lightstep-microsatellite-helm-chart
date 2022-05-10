@@ -68,10 +68,15 @@ securityContext:
 
 service:
   type: ClusterIP
-  httpPort: 8181
   # -- set to true if you're using GRPC in order to deploy as a headless service for better load balancing
   grpc: false
-  grpcinsecure: 8184
+  ports:
+    - name: httpPort
+      port: 8181
+    - name: grpcinsecure
+      port: 8184
+    # - name: grpcsecure
+    #   port: 9292
   annotations: {}
 
 # For details on the Lightstep configuration parameters, please refer to: https://docs.lightstep.com/docs/micro-satellite-configuration-parameters
@@ -123,6 +128,23 @@ resources:
   requests:
     memory: 2Gi
     cpu: 2
+
+# If using TLS to from your prod env. Uncomment and remove {} to use
+volumes: {}
+# - name: lightstep-satellite-tls
+#   secret:
+#     defaultMode: 420
+#     items:
+#     - key: YOURKEY.bundle.pem
+#       path: YOURPATH.bundle.pem
+#     - key: YOURKEY.key.pem
+#       path: YOURPATH.com.key.pem
+#     secretName: lightstep-satellite-tls
+
+volumeMounts: {}
+# - mountPath: /mnt/lightstep/
+#   name: lightstep-satellite-tls
+#   readOnly: true
 
 nodeSelector: {}
 
