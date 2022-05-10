@@ -129,8 +129,8 @@ resources:
     memory: 2Gi
     cpu: 2
 
-# If using TLS to from your prod env
-# volumes:
+# If using TLS to from your prod env. Uncomment and remove {} to use
+volumes: {}
 # - name: lightstep-satellite-tls
 #   secret:
 #     defaultMode: 420
@@ -141,7 +141,7 @@ resources:
 #       path: YOURPATH.com.key.pem
 #     secretName: lightstep-satellite-tls
 
-# volumeMounts:
+volumeMounts: {}
 # - mountPath: /mnt/lightstep/
 #   name: lightstep-satellite-tls
 #   readOnly: true
