@@ -36,6 +36,7 @@ Lightstep microsatellite to collect telemetry data.
 | lightstep.tls_cert_prefix | string | `nil` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
+| pdbMinAvailable | int | `0` |  |
 | podAnnotations."prometheus.io/port" | string | `"9102"` |  |
 | podAnnotations."prometheus.io/scrape" | string | `"true"` |  |
 | podSecurityContext | object | `{}` |  |
