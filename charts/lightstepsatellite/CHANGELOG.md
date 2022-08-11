@@ -1,3 +1,7 @@
+## 2.0.8
+
+* Ability to set minAvailable PodDisruptionBudget.
+
 ## 2.0.7
 
 * New forward_spans.request.compressed_bytes.sum metric from Microsatellites that represents the bytes of compressed span data emitted.
