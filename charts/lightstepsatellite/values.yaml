@@ -15,6 +15,9 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+# Specify the minAvailable field for PodDisruptionBudget
+pdbMinAvailable: 0
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true

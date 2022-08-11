@@ -1,0 +1,11 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "lightstep.fullname" . }}-pdb
+  labels:
+    {{- include "lightstep.labels" . | nindent 4 }}
+spec:
+  minAvailable: {{ .Values.pdbMinAvailable }}
+  selector:
+    matchLabels:
+      {{- include "lightstep.selectorLabels" . | nindent 6 }}
