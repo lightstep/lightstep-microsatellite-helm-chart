@@ -1,3 +1,7 @@
+## 2.0.9
+
+* Downgraded PDB to use `policy/v1beta1`. It will work until k8s 1.25.
+
 ## 2.0.8
 
 * Ability to set minAvailable PodDisruptionBudget.
@@ -43,7 +47,7 @@ FIXES:
 
 BREAKING CHANGES:
 
-* Changes the metric `lightstep_bytes_received` to `lightstep_bytes action=received`. Any dashboards that use the metric `lightstep_bytes_received` 
+* Changes the metric `lightstep_bytes_received` to `lightstep_bytes action=received`. Any dashboards that use the metric `lightstep_bytes_received`
 
 ## 2.0.3
 
