@@ -1,4 +1,5 @@
-apiVersion: policy/v1
+# policy/v1beta1 support ends in 1.25, but only starts in 1.21.
+apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   name: {{ include "lightstep.fullname" . }}-pdb
