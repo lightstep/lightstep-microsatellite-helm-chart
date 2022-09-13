@@ -1,6 +1,6 @@
 # lightstep
 
-![Version: 2.0.8](https://img.shields.io/badge/Version-2.0.8-informational?style=flat-square) ![AppVersion: 2022-04-28_17-39-22Z](https://img.shields.io/badge/AppVersion-2022--04--28_17--39--22Z-informational?style=flat-square)
+![Version: 2.0.10](https://img.shields.io/badge/Version-2.0.10-informational?style=flat-square) ![AppVersion: 2022-04-28_17-39-22Z](https://img.shields.io/badge/AppVersion-2022--04--28_17--39--22Z-informational?style=flat-square)
 
 Lightstep microsatellite to collect telemetry data.
 
@@ -29,6 +29,7 @@ Lightstep microsatellite to collect telemetry data.
 | lightstep.guid | string | `nil` | defaults to pod's name using the Downward API |
 | lightstep.http_plain_port | int | `8181` |  |
 | lightstep.http_secure_port | int | `9191` |  |
+| lightstep.max_msg_size_bytes | int | `nil` |  |
 | lightstep.plain_port | int | `8383` |  |
 | lightstep.project_name | string | `""` | REQUIRED if `lightstep.disable_access_token_checking` is `true` |
 | lightstep.satelliteKey | string | `""` | REQUIRED: your Satellite Key - if not set, `lightstep.collector_satellite_key_secret_name` and `lightstep.collector_satellite_key_secret_key` must be set |
