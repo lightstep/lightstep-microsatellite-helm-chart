@@ -1,3 +1,7 @@
+## 2.0.10
+
+* Added `lightstep.max_msg_size_bytes` as a configuration option to override the maximum receive payload size for gRPC messages.
+
 ## 2.0.9
 
 * Downgraded PDB to use `policy/v1beta1`. It will work until k8s 1.25.
