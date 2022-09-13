@@ -77,6 +77,34 @@ service:
   grpcinsecure: 8184
   annotations: {}
 
+# This section enables the microsatellite to autoscale based on defined custom
+# metrics. In order to use this functionality, one needs to enable a custom
+# metrics API server by implementing "custom.metrics.k8s.io" or using a
+# supported third party adapter like https://github.com/directxman12/k8s-prometheus-adapter
+hpa:
+  enabled: false
+  # minReplicas: 1
+  # maxReplicas: 10
+  # metrics:
+  # - type: Resource
+  #   resource:
+  #     name: cpu
+  #     target:
+  #       type: Utilization
+  #       averageUtilization: 200
+
+ingress:
+  enabled: false
+  annotations:
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  extraLabels: {}
+  hosts:
+     - name: chart-example.com
+       path: /
+       port: http
+  tls: []
+
 # For details on the Lightstep configuration parameters, please refer to: https://docs.lightstep.com/docs/micro-satellite-configuration-parameters
 
 lightstep:
