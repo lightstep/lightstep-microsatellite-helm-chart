@@ -120,7 +120,7 @@ lightstep:
   # Configure max gRPC receive message size in bytes.
   # https://pkg.go.dev/google.golang.org/grpc#MaxRecvMsgSize
   # Defaults to the library default of 4MiB.
-  max_msg_size_bytes:
+  max_msg_size_bytes: 0
 
 # Recommended resources would be 2Gi memory and 2 cpu
 resources:
