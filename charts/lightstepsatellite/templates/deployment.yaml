@@ -116,7 +116,7 @@ spec:
             - name: COLLECTOR_STATSD_CLIENT_PREFIX
               value: {{ .Values.statsd.client_prefix | quote }}
             {{ end }}
-            {{ if not (kindIs "invalid" .Values.lightstep.max_msg_size_bytes) }}
+            {{ if .Values.lightstep.max_msg_size_bytes }}
             - name: COLLECTOR_MAX_MSG_SIZE_BYTES
               value: {{ .Values.lightstep.max_msg_size_bytes | quote }}
             {{ end }}
