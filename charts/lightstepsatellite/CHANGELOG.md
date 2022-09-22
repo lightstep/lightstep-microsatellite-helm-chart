@@ -1,3 +1,9 @@
+## 2.0.11
+
+* Incremental performance improvements
+* Improved microsatellite compression when using OpenTelemetry tracers
+* Image now based on Ubuntu 22.10
+
 ## 2.0.10
 
 * Added `lightstep.max_msg_size_bytes` as a configuration option to override the maximum receive payload size for gRPC messages.
