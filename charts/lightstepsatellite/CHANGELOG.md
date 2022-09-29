@@ -1,3 +1,7 @@
+## 2.0.12
+
+* Add autoscaling via HorizontalPodAutoscaler. Set autoscaling.enabled=true to use it.
+
 ## 2.0.11
 
 * Incremental performance improvements
