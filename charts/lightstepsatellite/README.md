@@ -1,6 +1,6 @@
 # lightstep
 
-![Version: 2.0.11](https://img.shields.io/badge/Version-2.0.11-informational?style=flat-square) ![AppVersion: 2022-08-19_13-14-47Z](https://img.shields.io/badge/AppVersion-2022--08--19_13--14--47Z-informational?style=flat-square)
+![Version: 2.0.12](https://img.shields.io/badge/Version-2.0.12-informational?style=flat-square) ![AppVersion: 2022-08-19_13-14-47Z](https://img.shields.io/badge/AppVersion-2022--08--19_13--14--47Z-informational?style=flat-square)
 
 Lightstep microsatellite to collect telemetry data.
 
@@ -11,6 +11,13 @@ Lightstep microsatellite to collect telemetry data.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| autoscaling.behavior | object | `{}` |  |
+| autoscaling.enabled | bool | `false` |  |
+| autoscaling.maxReplicas | int | `25` |  |
+| autoscaling.minReplicas | int | `1` |  |
+| autoscaling.targetCPUUtilizationPercentage | int | `50` |  |
+| autoscaling.targetMemoryUtilizationPercentage | int | `50` |  |
+| autoscalingTemplate | list | `[]` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"lightstep/microsatellite"` |  |
