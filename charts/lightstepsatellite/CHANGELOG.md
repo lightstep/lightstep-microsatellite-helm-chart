@@ -1,3 +1,9 @@
+## 2.0.13
+
+* Bug fix for OTLP/HTTP responses. This was a latent bug that surfaced with partial success responses introduced in OTLP v0.19. This will fix client errors such as: `proto: cannot parse invalid wire-format data`
+* Support for the name change from instrumentation library to instrumentation scope in OTLP/JSON (introduced in OTLP v0.15).
+
+
 ## 2.0.12
 
 * Add autoscaling via HorizontalPodAutoscaler. Set autoscaling.enabled=true to use it.
