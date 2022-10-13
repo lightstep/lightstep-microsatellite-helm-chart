@@ -8,7 +8,7 @@ replicaCount: 1
 
 image:
   repository: lightstep/microsatellite
-  version: 2022-08-19_13-14-47Z
+  version: 2022-10-03_20-16-42Z
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
