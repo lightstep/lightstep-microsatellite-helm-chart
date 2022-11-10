@@ -120,6 +120,10 @@ spec:
             - name: COLLECTOR_MAX_MSG_SIZE_BYTES
               value: {{ .Values.lightstep.max_msg_size_bytes | quote }}
             {{ end }}
+            {{- if .Values.lightstep.sample_percent }}
+            - name: COLLECTOR_SAMPLE_PERCENT
+              value: {{ .Values.lightstep.sample_percent | quote }}
+            {{- end }}
           ports:
           - containerPort: {{ .Values.lightstep.diagnostic_port }}
             name: diagnostics

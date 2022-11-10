@@ -1,6 +1,6 @@
 # lightstep
 
-![Version: 2.0.13](https://img.shields.io/badge/Version-2.0.13-informational?style=flat-square) ![AppVersion: 2022-10-03_20-16-42Z](https://img.shields.io/badge/AppVersion-2022--10--03_20--16--42Z-informational?style=flat-square)
+![Version: 2.0.14](https://img.shields.io/badge/Version-2.0.14-informational?style=flat-square) ![AppVersion: 2022-10-03_20-16-42Z](https://img.shields.io/badge/AppVersion-2022--10--03_20--16--42Z-informational?style=flat-square)
 
 Lightstep microsatellite to collect telemetry data.
 
@@ -39,6 +39,7 @@ Lightstep microsatellite to collect telemetry data.
 | lightstep.max_msg_size_bytes | int | `0` | Configure max gRPC receive message size in bytes. https://pkg.go.dev/google.golang.org/grpc#MaxRecvMsgSize Defaults to the library default of 4MiB if falsy. |
 | lightstep.plain_port | int | `8383` |  |
 | lightstep.project_name | string | `""` | REQUIRED if `lightstep.disable_access_token_checking` is `true` |
+| lightstep.sample_percent | int | `0` | Configure sampling by percentage. https://docs.lightstep.com/docs/micro-satellite-configuration-parameters#sample_percent Defaults to 0, which means unconfigured here. |
 | lightstep.satelliteKey | string | `""` | REQUIRED: your Satellite Key - if not set, `lightstep.collector_satellite_key_secret_name` and `lightstep.collector_satellite_key_secret_key` must be set |
 | lightstep.secure_port | int | `9393` |  |
 | lightstep.tls_cert_prefix | string | `nil` |  |

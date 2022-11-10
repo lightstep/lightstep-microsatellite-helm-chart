@@ -121,6 +121,11 @@ lightstep:
   # https://pkg.go.dev/google.golang.org/grpc#MaxRecvMsgSize
   # Defaults to the library default of 4MiB if falsy.
   max_msg_size_bytes: 0
+  # -- Configure sampling by percentage.
+  # https://docs.lightstep.com/docs/micro-satellite-configuration-parameters#sample_percent
+  # Defaults to 0, which means unconfigured here.
+  sample_percent: 0
+
 
 # Recommended resources would be 2Gi memory and 2 cpu
 resources:

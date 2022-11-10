@@ -1,3 +1,7 @@
+## 2.0.14
+
+* Add `lightstep.sample_percent` for configuring sample percentage from the microsatellite. Note this can also be configured through the Lightstep API, and the API takes precedence.
+
 ## 2.0.13
 
 * Bug fix for OTLP/HTTP responses. This was a latent bug that surfaced with partial success responses introduced in OTLP v0.19. This will fix client errors such as: `proto: cannot parse invalid wire-format data`
