@@ -21,7 +21,7 @@ Lightstep microsatellite to collect telemetry data.
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"lightstep/microsatellite"` |  |
-| image.version | string | `"2022-10-03_20-16-42Z"` |  |
+| image.version | string | `"2022-11-03_20-12-06Z"` |  |
 | imagePullSecrets | list | `[]` |  |
 | lightstep.admin_plain_port | int | `8180` |  |
 | lightstep.admin_secure_port | int | `9090` |  |

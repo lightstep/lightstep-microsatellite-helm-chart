@@ -1,3 +1,6 @@
+## 2.0.15
+
+* Security patch to `openssl` library used by the microsat. (Patches CVE's 2022-3602 and 2022-3358). See: https://launchpad.net/ubuntu/+source/openssl/3.0.5-2ubuntu2
 ## 2.0.14
 
 * Add `lightstep.sample_percent` for configuring sample percentage from the microsatellite. Note this can also be configured through the Lightstep API, and the API takes precedence.
