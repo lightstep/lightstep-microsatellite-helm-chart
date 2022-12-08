@@ -1,3 +1,7 @@
+## 2.0.15
+
+* Fix `diagnostic_port` Helm variable to target the right config value.
+
 ## 2.0.14
 
 * Add `lightstep.sample_percent` for configuring sample percentage from the microsatellite. Note this can also be configured through the Lightstep API, and the API takes precedence.
