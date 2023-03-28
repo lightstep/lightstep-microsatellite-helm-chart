@@ -1,3 +1,8 @@
+## 2.0.16
+
+* Omit Deployment.spec.replicas if autoscaling is enabled, or replicaCount is null.
+* Only set `COLLECTOR_REPORTER_BYTES_PER_PROJECT` if `lightstep.bytes_per_project` is non-null.
+
 ## 2.0.15
 
 * Fix `diagnostic_port` Helm variable to target the right config value.
