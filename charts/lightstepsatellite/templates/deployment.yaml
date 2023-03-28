@@ -65,8 +65,10 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
             {{- end }}
+            {{- if not (kindIs "invalid" .Values.lightstep.bytes_per_project) }}
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT
               value: {{ .Values.lightstep.bytes_per_project | quote }}
+            {{- end }}
             {{- if .Values.lightstep.bytes_per_project_override }}
             - name: COLLECTOR_REPORTER_BYTES_PER_PROJECT_OVERRIDES
               value: {{ .Values.lightstep.bytes_per_project_override | toJson | quote }}
