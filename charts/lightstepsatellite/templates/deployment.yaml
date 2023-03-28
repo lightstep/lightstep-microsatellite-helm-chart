@@ -5,7 +5,9 @@ metadata:
   labels:
     {{- include "lightstep.labels" . | nindent 4 }}
 spec:
+  {{- if not (or .Values.autoscaling.enabled (kindIs "invalid" .Values.replicaCount)) }}
   replicas: {{ .Values.replicaCount }}
+  {{- end }}
   selector:
     matchLabels:
       {{- include "lightstep.selectorLabels" . | nindent 6 }}

@@ -1,3 +1,7 @@
+## 2.0.16
+
+* Omit Deployment.spec.replicas if autoscaling is enabled, or replicaCount is null.
+
 ## 2.0.15
 
 * Fix `diagnostic_port` Helm variable to target the right config value.
