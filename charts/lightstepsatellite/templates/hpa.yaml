@@ -2,9 +2,9 @@
 
 {{- if .Capabilities.APIVersions.Has "autoscaling/v2" -}}
 apiVersion: autoscaling/v2
-{{- else -}}
+{{- else }}
 apiVersion: autoscaling/v2beta2
-{{- end -}}
+{{- end }}
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
