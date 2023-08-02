@@ -1,7 +1,7 @@
 apiVersion: v1
 name: lightstep
-version: 2.0.19
-appVersion: "2023-03-29_17-59-52Z"
+version: 2.0.20
+appVersion: "2023-07-31_19-36-12Z"
 description: Lightstep microsatellite to collect telemetry data.
 home: https://lightstep.com/
 icon: https://go.lightstep.com/rs/260-KGM-472/images/logo-medium-color-400x100.jpg

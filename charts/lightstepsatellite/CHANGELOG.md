@@ -1,3 +1,7 @@
+## 2.0.19
+
+* Update microsatellite image tag to `2023-07-31_19-36-12Z`.
+
 ## 2.0.18
 
 * Update helm templates to support k8s 1.25.
