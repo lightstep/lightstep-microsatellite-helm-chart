@@ -1,6 +1,6 @@
 # lightstep
 
-![Version: 2.0.20](https://img.shields.io/badge/Version-2.0.20-informational?style=flat-square) ![AppVersion: 2023-07-31_19-36-12Z](https://img.shields.io/badge/AppVersion-2023--07--31_19--36--12Z-informational?style=flat-square)
+![Version: 2.0.21](https://img.shields.io/badge/Version-2.0.20-informational?style=flat-square) ![AppVersion: 2024-01-22_17-52-59Z](https://img.shields.io/badge/AppVersion-2024--01--22_17--52--59Z-informational?style=flat-square)
 
 Lightstep microsatellite to collect telemetry data.
 
@@ -21,7 +21,7 @@ Lightstep microsatellite to collect telemetry data.
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"lightstep/microsatellite"` |  |
-| image.version | string | `"2023-07-31_19-36-12Z"` |  |
+| image.version | string | `"2024-01-22_17-52-59Z"` |  |
 | imagePullSecrets | list | `[]` |  |
 | lightstep.admin_plain_port | int | `8180` |  |
 | lightstep.admin_secure_port | int | `9090` |  |
