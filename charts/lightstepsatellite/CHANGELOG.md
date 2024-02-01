@@ -1,3 +1,7 @@
+## 2.0.21
+
+* Update microsatellite image tag to `2024-01-22_17-52-59Z` to fix security vulnerabilites.
+
 ## 2.0.19
 
 * Update microsatellite image tag to `2023-07-31_19-36-12Z`.
