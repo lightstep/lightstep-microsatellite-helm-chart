@@ -1,6 +1,6 @@
 # lightstep
 
-![Version: 2.0.21](https://img.shields.io/badge/Version-2.0.20-informational?style=flat-square) ![AppVersion: 2024-01-22_17-52-59Z](https://img.shields.io/badge/AppVersion-2024--01--22_17--52--59Z-informational?style=flat-square)
+![Version: 2.0.21](https://img.shields.io/badge/Version-2.0.21-informational?style=flat-square) ![AppVersion: 2024-01-22_17-52-59Z](https://img.shields.io/badge/AppVersion-2024--01--22_17--52--59Z-informational?style=flat-square)
 
 Lightstep microsatellite to collect telemetry data.
 
